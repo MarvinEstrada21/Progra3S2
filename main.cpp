@@ -41,6 +41,10 @@ int main(){
     return 0;
 }
 
+int factorial(){
+
+}
+
 int menu(){
     int opcion;
     bool valido = true;
