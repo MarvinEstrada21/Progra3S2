@@ -6,6 +6,7 @@ using namespace std;
 retorna la opcion elegida por el usuario*/
 
 int menu();
+int factorial(int);
 
 int main(){
     bool salir = false;
@@ -30,6 +31,10 @@ int main(){
 		break;}
 
 	    case 3:{
+		int num;
+		cout << "Escriba un número: ";
+		cin >> num;
+		cout << "El factorial de " <<  num << " es: " << factorial(num) << endl;
 		break;}
 
 	    case 4:
@@ -41,8 +46,15 @@ int main(){
     return 0;
 }
 
-int factorial(){
-
+int factorial(int i){
+    if (i < 0)//validar input
+	return -1;
+    else if (i == 0) {// fondo de la recursión
+	return 1;
+    } else {
+	return i * factorial(i-1);
+    }
+    return 0;
 }
 
 int menu(){
@@ -55,7 +67,7 @@ int menu(){
              << "3.- Calcular Factorial" <<  endl
              << "4.- Salir" << endl;
 
-        cout << " Ingrese una opción: ";
+        cout << "Ingrese una opción: ";
         cin >> opcion;
 
         if (opcion > 0 && opcion < 5)
